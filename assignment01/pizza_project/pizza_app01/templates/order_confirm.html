@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Order Confirmed</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container mt-4">
+
+        <div class="text-center mb-4">
+            <h1>Thanks {{ order.payment_deliver.name }} for your order!</h1>
+            <h2>Order number #{{ order.id }}</h2>
+            <h3>Expected Delivery at Expected Delivery: {{ estimated_delivery|date:"Y-m-d H:i" }}</h3>
+        </div>
+
+        <div class="card p-3 mb-4">
+            <h4>Order Details:</h4>
+
+            <div class="card p-3 mb-3">
+                <h5>Pizza Details:</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Pizza Size:</strong> {{ order.pizza.size }}</li>
+                    <li class="list-group-item"><strong>Pizza Crust:</strong> {{ order.pizza.crust }}</li>
+                    <li class="list-group-item"><strong>Pizza Sauce:</strong> {{ order.pizza.sauce }}</li>
+                    <li class="list-group-item"><strong>Pizza Cheese:</strong> {{ order.pizza.cheese }}</li>
+
+                    {% if order.pizza.pepperoni %}<li class="list-group-item">Pepperoni</li>{% endif %}
+                    {% if order.pizza.chicken %}<li class="list-group-item">Chicken</li>{% endif %}
+                    {% if order.pizza.ham %}<li class="list-group-item">Ham</li>{% endif %}
+                    {% if order.pizza.pineapple %}<li class="list-group-item">Pineapple</li>{% endif %}
+                    {% if order.pizza.peppers %}<li class="list-group-item">Peppers</li>{% endif %}
+                    {% if order.pizza.mushrooms %}<li class="list-group-item">Mushrooms</li>{% endif %}
+                    {% if order.pizza.onions %}<li class="list-group-item">Onions</li>{% endif %}
+                    {% if order.pizza.jalapeno %}<li class="list-group-item">Jalapeno</li>{% endif %}
+                    {% if order.pizza.olives %}<li class="list-group-item">Olives</li>{% endif %}
+                    {% if order.pizza.garlic %}<li class="list-group-item">Garlic</li>{% endif %}
+                    {% if order.pizza.bacon %}<li class="list-group-item">Bacon</li>{% endif %}
+                    {% if order.pizza.anchovies %}<li class="list-group-item">Anchovies</li>{% endif %}
+                </ul>
+            </div>
+
+            <div class="card p-3 mb-3">
+                <h5>Personal Details:</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Name: </strong>{{ order.payment_deliver.name }}</li>
+                    <li class="list-group-item"><strong>Phone: </strong>{{ order.payment_deliver.phone }}</li>
+
+                </ul>
+            </div>
+
+            <div class="card p-3 mb-3">
+                <h5>Delivery Address:</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{ order.payment_deliver.address }}</li>
+                    <li class="list-group-item">{{ order.payment_deliver.city }}</li>
+                    <li class="list-group-item">{{ order.payment_deliver.county }}</li>
+                    <li class="list-group-item">{{ order.payment_deliver.country }}</li>
+                    <li class="list-group-item">{{ order.payment_deliver.postcode }}</li>
+                </ul>
+            </div>
+
+            <div class="card p-3">
+                <h5>Payment Details:</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Card: </strong> **** **** **** {{ order.payment_deliver.card_number|slice:"-4:" }}</li>
+                </ul>
+                <h6>Billing Address:</h6>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{ order.payment_deliver.address }}</li>
+                    <li class="list-group-item">{{ order.payment_deliver.city }}</li>
+                    <li class="list-group-item">{{ order.payment_deliver.county }}</li>
+                    <li class="list-group-item">{{ order.payment_deliver.country }}</li>
+                    <li class="list-group-item">{{ order.payment_deliver.postcode }}</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+    </div>
+
+{% endblock %}

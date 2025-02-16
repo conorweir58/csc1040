@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Crispy Crust's</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container d-flex flex-column min-vh-100 mt-1">
+
+        <div class="container d-flex flex-column align-items-center justify-content-center text-center">
+            <h1 class="fw-bold">Crispy Crust's Pizzeria</h1>
+            <h2 class="text-muted">Welcome!</h2>
+            <img src="{% static 'img/crispypizza.png' %}" alt="Crispy Crust's Logo" class="rounded-circle" width="150" height="150">
+        </div>
+
+        {% if user.is_authenticated %}
+{#           Add either first name or username                          #}
+            <div class="container mt-2 text-center d-flex flex-column">
+                <h3>Like to order a Pizza?</h3>
+                <br>
+                <div class="d-flex justify-content-center">
+                    <button onclick="window.location.href='{% url 'order' %}'">Order Pizza</button>
+                </div>
+                <br>
+
+                <h4>Show Previous Orders</h4>
+                <div class="d-flex justify-content-center">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="toggleOrdersCheckbox" onclick="toggleOrders()" />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="container mt-2 text-center d-flex flex-column">
+                <br>
+
+                <div id="ordersContainer" class="d-none">
+                    {% if orders%}
+                        {% for order in orders %}
+
+                        <div class="card shadow-sm mb-3">
+                            <div class="card-body">
+                                <h4 class="card-title text-danger"><strong>Order Number</strong>: #{{ order.id }}</h4>
+                                <h5 class="text-muted"><strong>Order Date</strong>: {{ order.date_ordered }}</h5>
+                                <h5 class="mt-3"><strong>Order Details:</strong></h5>
+
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>Pizza Size:</strong> {{ order.pizza.size }}</li>
+                                    <li class="list-group-item"><strong>Pizza Crust:</strong> {{ order.pizza.crust }}</li>
+                                    <li class="list-group-item"><strong>Pizza Sauce:</strong> {{ order.pizza.sauce }}</li>
+                                    <li class="list-group-item"><strong>Pizza Cheese:</strong> {{ order.pizza.cheese }}</li>
+
+                                    {% if order.pizza.pepperoni %}<li class="list-group-item">Pepperoni</li>{% endif %}
+                                    {% if order.pizza.chicken %}<li class="list-group-item">Chicken</li>{% endif %}
+                                    {% if order.pizza.ham %}<li class="list-group-item">Ham</li>{% endif %}
+                                    {% if order.pizza.pineapple %}<li class="list-group-item">Pineapple</li>{% endif %}
+                                    {% if order.pizza.peppers %}<li class="list-group-item">Peppers</li>{% endif %}
+                                    {% if order.pizza.mushrooms %}<li class="list-group-item">Mushrooms</li>{% endif %}
+                                    {% if order.pizza.onions %}<li class="list-group-item">Onions</li>{% endif %}
+                                    {% if order.pizza.jalapeno %}<li class="list-group-item">Jalapeno</li>{% endif %}
+                                    {% if order.pizza.olives %}<li class="list-group-item">Olives</li>{% endif %}
+                                    {% if order.pizza.garlic %}<li class="list-group-item">Garlic</li>{% endif %}
+                                    {% if order.pizza.bacon %}<li class="list-group-item">Bacon</li>{% endif %}
+                                    {% if order.pizza.anchovies %}<li class="list-group-item">Anchovies</li>{% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <h4><strong>You have not made any orders yet!</strong></h4>
+                    {% endif %}
+                </div>
+            </div>
+
+        {% else %}
+            <div class="container mt-2 text-center d-flex flex-column align-items-center justify-content-center">
+
+                <h3 class="mb-3 w-75 p-3">You must be logged in to order pizza!</h3>
+                <button onclick="window.location.href='{% url 'login' %}'">Log In</button>
+
+                <h4 class="mb-2 w-75 p-3">Don't have an account?</h4>
+                <button onclick="window.location.href='{% url 'register' %}'">Register</button>
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        function toggleOrders() {
+            var ordersDiv = document.getElementById("ordersContainer");
+            ordersDiv.classList.toggle("d-none");
+        }
+    </script>
+
+{% endblock %}

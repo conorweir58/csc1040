@@ -1,0 +1,227 @@
+/* General Styles */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /*background-color: #dd3434 !important;*/
+    background-color: #bab9b9 !important;
+    background-image: url('./pizza_background_edited_polished_v02.PNG');
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #dd3434;
+}
+.navbar-brand {
+    color: black !important;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.navbar-nav .nav-link {
+    color: #000000 !important;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+.navbar-nav .nav-link:hover {
+    color: orangered !important;
+    text-decoration: underline;
+}
+
+.seperator {
+    padding: 6px 10px;
+    color: #000000;
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+/* Header Divider */
+.navbar-nav .nav-link:last-of-type {
+    margin-left: 10px;
+}
+
+/* Buttons */
+button {
+    width: 30% !important;
+    background-color: orangered;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px !important;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: darkred;
+    transform: scale(101%);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Toggle Button */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+/* Hide default checkbox */
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider (toggle switch look) */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 25px;
+    transition: 0.4s;
+}
+
+/* The slider circle */
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 17px;
+    width: 17px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+/* When checkbox is checked, change background */
+input:checked + .slider {
+    background-color: #28a745;
+}
+
+/* Move slider circle when checked */
+input:checked + .slider::before {
+    transform: translateX(24px);
+}
+
+/* Container Styling */
+.container {
+    margin-top: 40px;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Headings */
+h1, h2 {
+    color: #343a40;
+}
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+h3, h4 {
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+/* Forms */
+form {
+    margin-top: 20px;
+}
+form label {
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+    color: #343a40;
+}
+form input, form select, form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+form input:focus, form select:focus, form textarea:focus {
+    border-color: orangered;
+    outline: none;
+    box-shadow: 0 0 4px rgba(217, 1, 1, 0.5);
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    padding: 20px 0;
+    text-align: center;
+    color: #ffffff;
+    margin-top: auto;
+    flex-shrink: 0;
+}
+footer .footer-line {
+    width: 80%;
+    height: 2px;
+    background-color: orangered;
+    margin: 0 auto 10px auto;
+}
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Custom Content Styling */
+.mt-4 {
+    margin-top: 40px !important;
+}
+
+/* Buttons inside the order page */
+.container button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/*Form Styling*/
+
+/* Style checkboxes */
+input[type="checkbox"] {
+    margin: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #007bff;
+}
+
+input[type="checkbox"]:focus {
+    outline: none;
+    border: 2px solid #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+label {
+    font-size: 1.1rem;
+    color: #333;
+    margin-left: 10px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+input[type="checkbox"]:disabled {
+    background-color: #e0e0e0;
+    border-color: #b0b0b0;
+}
+

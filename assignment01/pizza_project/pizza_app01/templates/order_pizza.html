@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Create Order</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container mt-4">
+
+        <h1>Create your delicious Pizza!</h1>
+
+        <form class="container p-4 border rounded shadow-sm bg-light" action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="">Order Pizza</button>
+            </div>
+
+        </form>
+
+    </div>
+
+{% endblock %}
