@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>All Years</title>
+{% endblock %}
+
+{% block content %}
+    {% for year in years %}
+
+        <a href="{% url 'book_by_year' yearid=year %}">{{year}}</a>
+
+    {% endfor %}
+{% endblock %}

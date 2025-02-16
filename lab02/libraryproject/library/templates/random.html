@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>My Library</title>
+{% endblock %}
+
+{% block content %}
+    <body>
+        {% if x < 50 %}
+            <p>Your number is less than 50!</p>
+        {% else %}
+            <p>Your number is greater than 50!</p>
+        {% endif %}
+    </body>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Ex2</title>
+{% endblock %}
+
+{% block content %}
+    <ul>
+		{% for i in x %}
+            {% if i == 4 %}
+               <li> four </li>
+            {% else %}
+               <li> {{ i }} </li>
+            {% endif %}
+            <br>
+	  {% endfor %}
+   </ul>
+{% endblock %}

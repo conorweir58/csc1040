@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+	<head>
+        {% block title%}
+        {% endblock %}
+    </head>
+     <style>
+			ul {
+			  list-style-type: none;
+			  margin: 0;
+			  padding: 0;
+			}
+
+			li {
+			  display: inline;
+			}
+			</style>
+  </head>
+	<body>
+    <!-- navbar that should appear on every page -->
+		<ul>
+		  <li><a href="{% url 'index' %}">Home</a></li>
+		  <li><a href="{% url 'variable' %}">Variable</a></li>
+		  <li><a href="{% url 'random' %}">Random</a></li>
+		  <li><a href="{% url 'ex2' %}">Ex2</a></li>
+          <li><a href="{% url 'fizzbuzz' %}">FizzBuzz</a></li>
+
+		</ul>
+
+    <!-- placeholder for content to be filled in by subsequent views -->
+		{% block content %}
+
+       <!-- Content provided by other templates will be filled in here -->
+    {% endblock %}
+	</body>
+</html>

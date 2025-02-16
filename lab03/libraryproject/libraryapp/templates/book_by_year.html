@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>{{ year }}</title>
+{% endblock %}
+
+{% block content %}
+
+    {% for b in books %}
+
+        <div class="card" style="width: 18rem; margin: 10px; display: inline-flex; ">
+            <div class="card-body">
+                <h5 class="card-title">{{ b.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ b.author }}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">€{{ b.price }}</h6>
+                <p class="card-text">{{ b.synopsis }}</p>
+                <p class="card-text">{{ b.category }}</p>
+                <p class="card-text">{{ b.year }}</p>
+            </div>
+        </div>
+
+    {% endfor %}
+
+{% endblock %}
