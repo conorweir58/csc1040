@@ -19,7 +19,6 @@ function Nav() {
                         <li className="nav-item"><Link to="/categories" className="nav-link">Categories</Link></li>
                         <li className="nav-item"><Link to="/orders-status" className="nav-link">Orders by Status</Link></li>
                         <li className="nav-item"><Link to="/customers" className="nav-link">Customers</Link></li>
-                        <li className="nav-item"><a href="/registration" className="nav-link">Register Student</a></li>
                     </ul>
                 </div>
             </div>

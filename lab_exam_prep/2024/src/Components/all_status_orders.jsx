@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function AllStatus() {
   const [selectedStatus, setSelectedStatus] = useState("");
@@ -70,6 +71,10 @@ function AllStatus() {
                         <li className="list-group-item"><strong>Address:</strong> {order.shipping_addr}</li>
                         <li className="list-group-item"><strong>Ordered On:</strong> {new Date(order.date_ordered).toLocaleString()}</li>
                       </ul>
+
+                      <div>
+                          <Link to={`/order/${order.url?.split("/").slice(-2, -1)}`} className="btn btn-primary mr-2 w-100 mt-3">Order #{order.url?.split("/").slice(-2, -1)}</Link>
+                      </div>
                     </div>
                   </div>
                 </div>

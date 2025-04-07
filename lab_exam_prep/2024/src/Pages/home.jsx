@@ -16,9 +16,6 @@ function Home() {
               <div className="col-md-6">
                   <Link to="/customers" className="btn btn-primary btn-lg w-100">View Customers</Link>
               </div>
-              <div className="col-md-6">
-                  <Link to="/customers" className="btn btn-primary btn-lg w-100">View All Orders</Link>
-              </div>
           </div>
       </div>
     );

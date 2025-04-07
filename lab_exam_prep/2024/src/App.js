@@ -11,6 +11,7 @@ import ProductsCategory from './Components/products_category';
 import AllStatus from './Components/all_status_orders';
 import AllCustomers from './Components/all_customers';
 import SingleCustomer from './Components/single_customer';
+import OrderInfo from './Components/order_info';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/products/:categorycode" element={<ProductsCategory />} />
 
           <Route path="/orders-status" element={<AllStatus />} />
+          <Route path="/order/:orderid" element={<OrderInfo />} />
 
           <Route path="/customers" element={<AllCustomers />} />
           <Route path="/customers/:customerid" element={<SingleCustomer />} />
