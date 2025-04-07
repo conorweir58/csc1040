@@ -1,5 +1,5 @@
 
-# Ca298 Test app
+# CSC1040 Test app
 
 This is a react skeleton application for the Ca298 lab exam.
 
